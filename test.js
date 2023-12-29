@@ -1,7 +1,7 @@
 const i2c = require('i2c-bus');
 const i2c_ADDR1 = 0x20;
 const i2c_ADDR2 = 0x26;
-const OFF = 0x0000;
+const OFF = 0xFFFF;
 
 const rbuf = Buffer.alloc(4);
 const wbuf = Buffer.from([OFF]);
