@@ -20,7 +20,7 @@ const i2c1 = i2c.open(1, err => {
     i2c1.readWord(i2c_ADDR1, 0x00, (err, rawData) => {
       if (err) throw err;
   
-      console.log(rawData.Convert.ToString(20, 2));
+      console.log(rawData.ToString(20, 2));
   
       i2c1.close(err => {
         if (err) throw err;
