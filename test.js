@@ -14,13 +14,17 @@ const OFF = 0x00;
 //   then(_ => i2c1.close())
 // ).catch(console.log);
 
+function dec2bin(dec) {
+    return (dec >>> 0).toString(2);
+  }
+
 const i2c1 = i2c.open(1, err => {
     if (err) throw err;
   
     i2c1.readWord(i2c_ADDR1, 0x00, (err, rawData) => {
       if (err) throw err;
   
-      console.log(dec2bin(rawData));
+      console.log(rawData.toString(2));
   
       i2c1.close(err => {
         if (err) throw err;
