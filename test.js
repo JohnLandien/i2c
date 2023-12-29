@@ -1,9 +1,10 @@
 const i2c = require('i2c-bus');
 const i2c_ADDR1 = 0x20;
 const i2c_ADDR2 = 0x26;
+const OFF = 0x0000;
 
 const rbuf = Buffer.alloc(2);
-//const wbuf ;
+const wbuf = Buffer.from([OFF]);
 
 
 i2c.openPromisified(1).
