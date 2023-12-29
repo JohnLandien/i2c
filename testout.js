@@ -18,7 +18,7 @@ const ON = 0xFFFF;
 const i2c1 = i2c.open(1, err => {
     if (err) throw err;
   
-    i2c1.writeWord(i2c_ADDR1, 0, ON, (err, rawData) => {
+    i2c1.writeI2cBlock(i2c_ADDR1, 0, ON.length,  ON, (err, rawData) => {
       if (err) throw err;
   
       console.log(rawData);
