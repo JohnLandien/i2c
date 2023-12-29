@@ -2,6 +2,7 @@ const i2c = require('i2c-bus');
 const i2c_ADDR1 = 0x20;
 const i2c_ADDR2 = 0x26;
 const OFF = 0x00;
+const ON = 0xFF;
 
 //const rbuf = Buffer.alloc(2);
 //const wbuf = Buffer.from([OFF]);
@@ -17,7 +18,7 @@ const OFF = 0x00;
 const i2c1 = i2c.open(1, err => {
     if (err) throw err;
   
-    i2c1.readWord(i2c_ADDR1, 0x00,  0x00, (err, rawData) => {
+    i2c1.readWord(i2c_ADDR1, 0x00,  ON, (err, rawData) => {
       if (err) throw err;
   
       console.log(rawData);
